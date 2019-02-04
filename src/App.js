@@ -14,6 +14,11 @@ class App extends Component {
 						Edit <code>src/App.js</code> and save to reload.
 					</p>
 					<Test />
+					<ul className="App-list">
+						<li>Test 1</li>
+						<li>Test 2</li>
+						<li>Test 3</li>
+					</ul>
 					<a
 						className="App-link"
 						href="https://reactjs.org"
