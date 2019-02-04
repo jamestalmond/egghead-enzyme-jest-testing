@@ -32,4 +32,14 @@ describe('<App />', () => {
 		const wrapper = shallow(<App />);
 		expect(wrapper.find('a').text()).toBe('Learn React');
 	});
+
+	it('should find an element with the text prop', () => {
+		const wrapper = shallow(<App />);
+		expect(wrapper.find('[text="Foo"]'));
+	});
+
+	it('should find an element with the specified alt text', () => {
+		const wrapper = shallow(<App />);
+		expect(wrapper.find({ alt: 'logo' }));
+	});
 });
