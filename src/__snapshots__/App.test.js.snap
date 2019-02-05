@@ -20,6 +20,11 @@ exports[`<App /> mount rendering matches the snapshot 1`] = `
           Foo
         </div>
       </Title>
+      <h2 />
+      <input
+        onChange={[Function]}
+        type="text"
+      />
       <p>
         Edit 
         <code>
@@ -27,6 +32,16 @@ exports[`<App /> mount rendering matches the snapshot 1`] = `
         </code>
          and save to reload.
       </p>
+      <p
+        className="button-state"
+      >
+        No!
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        Click
+      </button>
       <Test>
         <div>
           Testing
@@ -73,6 +88,11 @@ exports[`<App /> shallow rendering matches the snapshot 1`] = `
     <Title
       text="Foo"
     />
+    <h2 />
+    <input
+      onChange={[Function]}
+      type="text"
+    />
     <p>
       Edit 
       <code>
@@ -80,6 +100,16 @@ exports[`<App /> shallow rendering matches the snapshot 1`] = `
       </code>
        and save to reload.
     </p>
+    <p
+      className="button-state"
+    >
+      No!
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      Click
+    </button>
     <Test />
     <ul
       className="App-list"

@@ -11,7 +11,7 @@ configure({ adapter: new Adapter() });
 describe('<App /> shallow rendering', () => {
 	it('should render 1 p tag', () => {
 		const wrapper = shallow(<App />);
-		expect(wrapper.find('p').length).toBe(1);
+		expect(wrapper.find('p').length).toBe(2);
 	});
 
 	it('should render an element with the class .App-header', () => {
@@ -48,12 +48,28 @@ describe('<App /> shallow rendering', () => {
 		const tree = shallow(<App />);
 		expect(toJson(tree)).toMatchSnapshot();
 	});
+
+	it('on button click changes p text', () => {
+		const wrapper = shallow(<App />);
+		const button = wrapper.find('button');
+		expect(wrapper.find('.button-state').text()).toBe('No!');
+		button.simulate('click');
+		expect(wrapper.find('.button-state').text()).toBe('Yes!');
+	});
+
+	it('on input change, title changes text', () => {
+		const wrapper = shallow(<App />);
+		const input = wrapper.find('input');
+		expect(wrapper.find('h2').text()).toBe('');
+		input.simulate('change', { currentTarget: { value: 'James' } });
+		expect(wrapper.find('h2').text()).toBe('James');
+	});
 });
 
 describe('<App /> mount rendering', () => {
 	it('should render 1 p tag', () => {
 		const wrapper = mount(<App />);
-		expect(wrapper.find('p').length).toBe(1);
+		expect(wrapper.find('p').length).toBe(2);
 		wrapper.unmount();
 	});
 
