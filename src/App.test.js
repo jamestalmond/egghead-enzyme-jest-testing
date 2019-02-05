@@ -88,6 +88,14 @@ describe('<App /> shallow rendering', () => {
 		expect(App.prototype.componentWillReceiveProps.mock.calls.length).toBe(1);
 		expect(wrapper.find('.lifeCycle').text()).toBe('componentWillReceiveProps');
 	});
+
+	it('handleStrings function returns correctly', () => {
+		const wrapper = shallow(<App />);
+		const trueReturn = wrapper.instance().handleStrings('Hello world');
+		expect(trueReturn).toBe(true);
+		const falseReturn = wrapper.instance().handleStrings('');
+		expect(falseReturn).toBe(false);
+	});
 });
 
 describe('<App /> mount rendering', () => {

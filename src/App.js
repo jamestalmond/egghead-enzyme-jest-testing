@@ -8,6 +8,14 @@ const Title = ({ text }) => <div>{text}</div>;
 class App extends Component {
 	state = { on: false, input: '', mainColor: 'blue', lifeCycle: '' };
 
+	handleStrings(str) {
+		if (str === 'Hello world') {
+			return true;
+		}
+
+		return false;
+	}
+
 	componentDidMount() {
 		this.setState({ lifeCycle: 'componentDidMount' });
 	}
