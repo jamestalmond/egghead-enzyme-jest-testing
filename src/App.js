@@ -6,7 +6,7 @@ const Test = () => <div>Testing</div>;
 const Title = ({ text }) => <div>{text}</div>;
 
 class App extends Component {
-	state = { on: false, input: '' };
+	state = { on: false, input: '', mainColor: 'blue' };
 
 	render() {
 		return (
@@ -15,6 +15,7 @@ class App extends Component {
 					<img src={logo} className="App-logo" alt="logo" />
 					<Title text="Foo" />
 					<h2>{this.state.input}</h2>
+					<h3 className={this.state.mainColor}>Everyone is welcome!</h3>
 					<input
 						onChange={e => this.setState({ input: e.currentTarget.value })}
 						type="text"

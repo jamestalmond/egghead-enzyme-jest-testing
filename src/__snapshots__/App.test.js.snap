@@ -21,6 +21,11 @@ exports[`<App /> mount rendering matches the snapshot 1`] = `
         </div>
       </Title>
       <h2 />
+      <h3
+        className="blue"
+      >
+        Everyone is welcome!
+      </h3>
       <input
         onChange={[Function]}
         type="text"
@@ -89,6 +94,11 @@ exports[`<App /> shallow rendering matches the snapshot 1`] = `
       text="Foo"
     />
     <h2 />
+    <h3
+      className="blue"
+    >
+      Everyone is welcome!
+    </h3>
     <input
       onChange={[Function]}
       type="text"
