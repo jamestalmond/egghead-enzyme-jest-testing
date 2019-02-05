@@ -1,6 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> matches the snapshot 1`] = `
+exports[`<App /> mount rendering matches the snapshot 1`] = `
+<App>
+  <div
+    className="App"
+  >
+    <header
+      className="App-header"
+    >
+      <img
+        alt="logo"
+        className="App-logo"
+        src="logo.svg"
+      />
+      <Title
+        text="Foo"
+      >
+        <div>
+          Foo
+        </div>
+      </Title>
+      <p>
+        Edit 
+        <code>
+          src/App.js
+        </code>
+         and save to reload.
+      </p>
+      <Test>
+        <div>
+          Testing
+        </div>
+      </Test>
+      <ul
+        className="App-list"
+      >
+        <li>
+          Test 1
+        </li>
+        <li>
+          Test 2
+        </li>
+        <li>
+          Test 3
+        </li>
+      </ul>
+      <a
+        className="App-link"
+        href="https://reactjs.org"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Learn React
+      </a>
+    </header>
+  </div>
+</App>
+`;
+
+exports[`<App /> shallow rendering matches the snapshot 1`] = `
 <div
   className="App"
 >
