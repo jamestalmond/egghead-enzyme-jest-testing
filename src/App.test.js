@@ -11,7 +11,7 @@ configure({ adapter: new Adapter() });
 describe('<App /> shallow rendering', () => {
 	it('should render 1 p tag', () => {
 		const wrapper = shallow(<App />);
-		expect(wrapper.find('p').length).toBe(2);
+		expect(wrapper.find('p').length).toBe(3);
 	});
 
 	it('should render an element with the class .App-header', () => {
@@ -73,12 +73,27 @@ describe('<App /> shallow rendering', () => {
 		input.simulate('change', { currentTarget: { value: 'James' } });
 		expect(wrapper.find('h2').text()).toBe('James');
 	});
+
+	it('calls componentDidMount, updates p tag text', () => {
+		jest.spyOn(App.prototype, 'componentDidMount');
+		const wrapper = shallow(<App />);
+		expect(App.prototype.componentDidMount.mock.calls.length).toBe(1);
+		expect(wrapper.find('.lifeCycle').text()).toBe('componentDidMount');
+	});
+
+	it('setProps calls componentWillReceiveProps', () => {
+		jest.spyOn(App.prototype, 'componentWillReceiveProps');
+		const wrapper = shallow(<App />);
+		wrapper.setProps({ hide: true });
+		expect(App.prototype.componentWillReceiveProps.mock.calls.length).toBe(1);
+		expect(wrapper.find('.lifeCycle').text()).toBe('componentWillReceiveProps');
+	});
 });
 
 describe('<App /> mount rendering', () => {
 	it('should render 1 p tag', () => {
 		const wrapper = mount(<App />);
-		expect(wrapper.find('p').length).toBe(2);
+		expect(wrapper.find('p').length).toBe(3);
 		wrapper.unmount();
 	});
 

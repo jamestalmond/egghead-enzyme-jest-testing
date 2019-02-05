@@ -52,6 +52,11 @@ exports[`<App /> mount rendering matches the snapshot 1`] = `
           Testing
         </div>
       </Test>
+      <p
+        className="lifeCycle"
+      >
+        componentDidMount
+      </p>
       <ul
         className="App-list"
       >
@@ -121,6 +126,11 @@ exports[`<App /> shallow rendering matches the snapshot 1`] = `
       Click
     </button>
     <Test />
+    <p
+      className="lifeCycle"
+    >
+      componentDidMount
+    </p>
     <ul
       className="App-list"
     >
